@@ -7,3 +7,7 @@ pnpm add nombre-paquete
 pnpm add @nestjs/swagger
 pnpm approve-builds
 ```
+Para configurar variables de entorno:
+```
+pnpm add @nestjs/config
+```
