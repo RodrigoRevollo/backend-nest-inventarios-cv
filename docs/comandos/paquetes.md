@@ -1,0 +1,9 @@
+- Para instalar nuevos paquetes con (pnpm)
+```
+pnpm add nombre-paquete
+```
+- Si queremos instalar swagger con pnpm
+```
+pnpm add @nestjs/swagger
+pnpm approve-builds
+```
