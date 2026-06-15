@@ -20,3 +20,8 @@ pnpm add @nestjs/config
 ```
 pnpm add dotenv
 ```
+
+- Instalar para validacion
+```
+pnpm add class-validator class-transformer
+```
