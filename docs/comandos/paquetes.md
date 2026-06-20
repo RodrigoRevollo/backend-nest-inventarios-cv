@@ -23,5 +23,11 @@ pnpm add dotenv
 
 - Instalar para validacion
 ```
-pnpm add class-validator class-transformer
+pnpm add class-validator
+class-transformer
+```
+-Para cifrar contraseñas
+```
+pnpm add bcrypt
+pnpm approve-builds
 ```

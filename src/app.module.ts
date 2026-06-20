@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './modules/admin/users/users.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 
 @Module({
@@ -17,7 +18,7 @@ import { UsersModule } from './modules/admin/users/users.module';
       database: process.env.BD_DATABASE,
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       synchronize: false, // Nunca usar synchronize: true en producción, ya que puede causar pérdida de datos
-    }), UsersModule
+    }), UsersModule, AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
