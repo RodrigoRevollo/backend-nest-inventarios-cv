@@ -31,3 +31,9 @@ class-transformer
 pnpm add bcrypt
 pnpm approve-builds
 ```
+
+-Para JWT
+
+```
+pnpm add @nestjs/jwt
+```

@@ -1,10 +1,11 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { UsersService } from '../admin/users/users.service';
 import {hash, compare} from 'bcrypt';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-    constructor(private readonly userService: UsersService) {}
+    constructor(private readonly userService: UsersService, private jwtService: JwtService) {}
 
     async funlogin(email: string, pass_entrante: string){
         const user = await this.userService.findOneByEmail(email);
@@ -18,7 +19,16 @@ export class AuthService {
 
         // JWT --> json web token
 
-        return user;
+        const payload = {
+            sub: user.id,
+            email: user.email
+        }
+
+        const access_token = this.jwtService.signAsync(payload);
+
+        return {
+                access_token
+        };
     }
             
 
