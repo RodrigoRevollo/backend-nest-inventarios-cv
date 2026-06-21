@@ -3,6 +3,7 @@
 ### Obtener todos los usuarios
 GET {{baseUrl}}/users
 Accept: application/json
+Authorization: Bearer MI_TOKEN_SEGURO
 
 ###
 

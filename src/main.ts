@@ -25,6 +25,10 @@ async function bootstrap() {
     forbidNonWhitelisted: true,
   }));
 
+  // CORS
+  app.enableCors()
+
+
   // Forzamos el puerto 5000 si es el que quieres usar, o dejamos el dinámico
   const port = process.env.PORT ?? 5000; 
   await app.listen(port);
