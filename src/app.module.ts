@@ -5,6 +5,9 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './modules/admin/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { InventarioModule } from './modules/admin/inventario/inventario.module';
+import { ClienteProvedorModule } from './modules/admin/cliente-provedor/cliente-provedor.module';
+import { NotaModule } from './modules/admin/nota/nota.module';
 
 
 @Module({
@@ -18,7 +21,7 @@ import { AuthModule } from './modules/auth/auth.module';
       database: process.env.BD_DATABASE,
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       synchronize: false, // Nunca usar synchronize: true en producción, ya que puede causar pérdida de datos
-    }), UsersModule, AuthModule
+    }), UsersModule, AuthModule, InventarioModule, ClienteProvedorModule, NotaModule
   ],
   controllers: [AppController],
   providers: [AppService],
