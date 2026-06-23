@@ -1,0 +1,42 @@
+@baseUrl = http://127.0.0.1:5000
+
+### Obtener todos los usuarios
+GET {{baseUrl}}/producto
+Accept: application/json
+Authorization: Bearer MI_TOKEN_SEGURO
+
+###
+
+### Obtener un usuario por ID
+GET {{baseUrl}}/users/26691728-b873-47e6-8cde-1e11dc6ca9d6
+Accept: application/json
+
+###
+
+### Crear usuario
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "name": "RodrigoRevollo",
+    "email": "rodrigorevollo@example.com",
+    "password": "L@desiempre3466"
+}
+
+###
+
+### Actualizar usuario completo
+PATCH  {{baseUrl}}/users/26691728-b873-47e6-8cde-1e11dc6ca9d6
+Content-Type: application/json
+
+{
+    "name": "Rodrigo Revollo",
+    "email": "rodrigo.revollo@example.com",
+    "password": "NuevaClave123"
+}
+
+
+### Eliminar usuario
+DELETE {{baseUrl}}/users/1
+
+###

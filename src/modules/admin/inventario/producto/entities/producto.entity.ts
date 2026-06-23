@@ -1,7 +1,6 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Categoria } from "../../categoria/entities/categoria.entity";
 import { AlmacenProducto } from "../../almacen/entities/almacen_producto.entity";
-import { Almacen } from "../../almacen/entities/almacen.entity";
 
 @Entity('productos')
 export class Producto {

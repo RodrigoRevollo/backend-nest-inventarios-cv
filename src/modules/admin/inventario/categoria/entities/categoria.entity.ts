@@ -14,7 +14,7 @@ export class Categoria {
     descripcion?: string;
 
     @OneToMany(() => Producto, prod => prod.categoria)
-    productos!: Producto 
+    productos!: Producto[]
 
     
 }
