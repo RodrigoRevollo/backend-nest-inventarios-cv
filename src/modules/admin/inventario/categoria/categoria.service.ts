@@ -8,17 +8,17 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class CategoriaService {
 
-constructor(
-  @InjectRepository(Categoria)
-  private categoriaRepo: Repository<Categoria>
+  constructor(
+    @InjectRepository(Categoria)
+    private categoriaRepo: Repository<Categoria>
 
-){}
+  ){}
 
   create(createCategoriaDto: CreateCategoriaDto) {
 
     const categoria = this.categoriaRepo.create(createCategoriaDto);
 
-    return this.categoriaRepo;
+    return this.categoriaRepo.save(categoria);
   }
 
   findAll() {
@@ -26,9 +26,9 @@ constructor(
   }
 
   async findOne(id: number) {
-
     const cate = await this.categoriaRepo.findOneBy({id});
-    if(!cate) throw new NotFoundException('La Categoria no existe')
+    if(!cate) throw new NotFoundException('La Categoria no existe');
+
     return cate;
   }
 
@@ -39,7 +39,7 @@ constructor(
   }
 
   async remove(id: number) {
-    //const result = await this.categoriaRepo.delete(id)
-    //if(result.affected === 0) throw new NotFoundException('La categoria no fue encontrada');
+    // const result = await this.categoriaRepo.delete(id);
+    // if(result.affected === 0) throw new NotFoundException('La categoria no fue encontrada');
   }
 }

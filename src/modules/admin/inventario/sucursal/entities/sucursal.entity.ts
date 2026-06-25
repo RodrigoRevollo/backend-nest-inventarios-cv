@@ -5,7 +5,7 @@ import { Almacen } from "../../almacen/entities/almacen.entity";
 export class Sucursal {
 
     @PrimaryGeneratedColumn()
-    id!:number;
+    id!: number;
 
     @Column({length: 100})
     nombre!: string;
@@ -16,12 +16,9 @@ export class Sucursal {
     @Column({length: 22})
     telefono!: string;
 
-
     @Column({length: 255})
     ciudad!: string;
 
-
-    @OneToMany(()=> Almacen, alm => alm.sucursal) 
+    @OneToMany(() => Almacen, alm => alm.sucursal)
     almacenes!: Almacen[]
-
 }

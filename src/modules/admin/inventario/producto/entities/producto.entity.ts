@@ -1,5 +1,6 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Categoria } from "../../categoria/entities/categoria.entity";
+import { Almacen } from "../../almacen/entities/almacen.entity";
 import { AlmacenProducto } from "../../almacen/entities/almacen_producto.entity";
 
 @Entity('productos')
@@ -11,16 +12,19 @@ export class Producto {
     nombre!: string;
 
     @Column({type: 'text'})
-    descripcion?: string
+    descripcion?: string;
 
-    @Column({type: 'decimal', precision: 12, scale:2})
+    @Column({type: 'decimal', precision: 12, scale: 2})
     precio_venta_actual?: number;
+
+    @Column({length: 255, nullable: true})
+    imagen?: string;
 
     @Column()
     estado!: boolean;
-    
+
     @ManyToOne(() => Categoria, categoria => categoria.productos, {eager: true})
-    categoria!: Categoria
+    categoria!: Categoria;
 
     @OneToMany(() => AlmacenProducto, ap => ap.producto)
     almacenes!: AlmacenProducto[]
